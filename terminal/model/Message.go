@@ -5,13 +5,14 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"time"
 
 	"github.com/google/uuid"
 )
 
 const (
-	TIMESTAMP_LAYOUT = "2006-01-02 15:04:05" // layout for time stamp
+	TIMESTAMP_LAYOUT = "2006-01-02 15:04:05"
 )
 
 /*
@@ -89,6 +90,8 @@ func NewMessage(data *Receipt) *Message {
 	if data == nil {
 		return nil
 	}
+
+	fmt.Println(data)
 
 	hashKeyStr, _ := hashKeyGen(data)
 
